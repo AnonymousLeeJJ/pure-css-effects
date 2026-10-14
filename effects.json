@@ -1,0 +1,179 @@
+{
+  "categories": [
+    { "id": "button", "name": "按钮", "icon": "🔘" },
+    { "id": "loader", "name": "加载动画", "icon": "⏳" },
+    { "id": "card", "name": "卡片悬停", "icon": "🃏" },
+    { "id": "text", "name": "文字特效", "icon": "🔤" },
+    { "id": "background", "name": "背景装饰", "icon": "🌈" }
+  ],
+  "effects": [
+    {
+      "name": "渐变边框按钮",
+      "category": "button",
+      "description": "悬停时渐变边框流动",
+      "html": "<button class=\"btn\">Hover Me</button>",
+      "css": ".btn {\n  position: relative;\n  padding: 12px 32px;\n  border: none;\n  border-radius: 8px;\n  background: #1f2328;\n  color: #fff;\n  font-size: 16px;\n  cursor: pointer;\n  z-index: 0;\n}\n.btn::before {\n  content: '';\n  position: absolute;\n  inset: -3px;\n  border-radius: 10px;\n  background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b);\n  background-size: 400%;\n  z-index: -1;\n  opacity: 0;\n  transition: opacity .3s;\n  animation: flow 3s linear infinite;\n}\n.btn:hover::before { opacity: 1; }\n@keyframes flow {\n  to { background-position: 400% 0; }\n}"
+    },
+    {
+      "name": "填充扫过按钮",
+      "category": "button",
+      "description": "色块从左向右填充",
+      "html": "<button class=\"btn\">Get Started</button>",
+      "css": ".btn {\n  padding: 12px 32px;\n  border: 2px solid #2563eb;\n  border-radius: 8px;\n  background: transparent;\n  color: #2563eb;\n  font-size: 16px;\n  cursor: pointer;\n  background-image: linear-gradient(#2563eb, #2563eb);\n  background-repeat: no-repeat;\n  background-position: 0 100%;\n  background-size: 0% 100%;\n  transition: background-size .35s, color .35s;\n}\n.btn:hover {\n  background-size: 100% 100%;\n  color: #fff;\n}"
+    },
+    {
+      "name": "呼吸光晕按钮",
+      "category": "button",
+      "description": "持续向外扩散的光晕",
+      "html": "<button class=\"btn\">Subscribe</button>",
+      "css": ".btn {\n  padding: 12px 32px;\n  border: none;\n  border-radius: 999px;\n  background: #e11d48;\n  color: #fff;\n  font-size: 16px;\n  cursor: pointer;\n  animation: pulse 1.8s infinite;\n}\n@keyframes pulse {\n  0% { box-shadow: 0 0 0 0 rgba(225, 29, 72, .5); }\n  70% { box-shadow: 0 0 0 16px rgba(225, 29, 72, 0); }\n  100% { box-shadow: 0 0 0 0 rgba(225, 29, 72, 0); }\n}"
+    },
+    {
+      "name": "3D 按压按钮",
+      "category": "button",
+      "description": "按下时有立体回弹感",
+      "html": "<button class=\"btn\">Press Me</button>",
+      "css": ".btn {\n  padding: 12px 32px;\n  border: none;\n  border-radius: 10px;\n  background: #0e9f6e;\n  color: #fff;\n  font-size: 16px;\n  cursor: pointer;\n  box-shadow: 0 6px 0 #066048;\n  transition: all .1s;\n}\n.btn:active {\n  transform: translateY(6px);\n  box-shadow: 0 0 0 #066048;\n}"
+    },
+    {
+      "name": "下划线生长按钮",
+      "category": "button",
+      "description": "极简文字按钮，悬停出下划线",
+      "html": "<button class=\"btn\">Learn More</button>",
+      "css": ".btn {\n  position: relative;\n  padding: 8px 4px;\n  border: none;\n  background: none;\n  color: #1f2328;\n  font-size: 16px;\n  cursor: pointer;\n}\n.btn::after {\n  content: '';\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 2px;\n  background: #7c3aed;\n  transform: scaleX(0);\n  transform-origin: right;\n  transition: transform .3s;\n}\n.btn:hover::after {\n  transform: scaleX(1);\n  transform-origin: left;\n}"
+    },
+    {
+      "name": "经典旋转圆环",
+      "category": "loader",
+      "description": "最通用的 loading 圆环",
+      "html": "<div class=\"loader\"></div>",
+      "css": ".loader {\n  width: 48px;\n  height: 48px;\n  border: 5px solid #e3e6ea;\n  border-top-color: #2563eb;\n  border-radius: 50%;\n  animation: spin .8s linear infinite;\n}\n@keyframes spin {\n  to { transform: rotate(360deg); }\n}"
+    },
+    {
+      "name": "三点跳动",
+      "category": "loader",
+      "description": "打字中/加载中的三点",
+      "html": "<div class=\"dots\"><span></span><span></span><span></span></div>",
+      "css": ".dots { display: flex; gap: 8px; }\n.dots span {\n  width: 12px;\n  height: 12px;\n  border-radius: 50%;\n  background: #2563eb;\n  animation: bounce 1.2s infinite ease-in-out;\n}\n.dots span:nth-child(2) { animation-delay: .15s; }\n.dots span:nth-child(3) { animation-delay: .3s; }\n@keyframes bounce {\n  0%, 80%, 100% { transform: scale(.6); opacity: .4; }\n  40% { transform: scale(1); opacity: 1; }\n}"
+    },
+    {
+      "name": "骨架屏闪烁",
+      "category": "loader",
+      "description": "内容占位骨架屏效果",
+      "html": "<div class=\"skeleton\">\n  <div class=\"line\" style=\"width:60%\"></div>\n  <div class=\"line\"></div>\n  <div class=\"line\" style=\"width:80%\"></div>\n</div>",
+      "css": ".skeleton { width: 220px; display: grid; gap: 12px; }\n.line {\n  height: 16px;\n  border-radius: 6px;\n  background: linear-gradient(90deg, #eee 25%, #f7f7f7 50%, #eee 75%);\n  background-size: 200% 100%;\n  animation: shimmer 1.4s infinite;\n}\n@keyframes shimmer {\n  to { background-position: -200% 0; }\n}"
+    },
+    {
+      "name": "双环追逐",
+      "category": "loader",
+      "description": "两个半环反向旋转",
+      "html": "<div class=\"dual\"></div>",
+      "css": ".dual {\n  width: 48px;\n  height: 48px;\n  border-radius: 50%;\n  border: 4px solid transparent;\n  border-top-color: #e11d48;\n  border-bottom-color: #e11d48;\n  animation: spin 1s linear infinite;\n  position: relative;\n}\n.dual::after {\n  content: '';\n  position: absolute;\n  inset: 6px;\n  border-radius: 50%;\n  border: 4px solid transparent;\n  border-left-color: #f59e0b;\n  border-right-color: #f59e0b;\n  animation: spin .6s linear infinite reverse;\n}\n@keyframes spin {\n  to { transform: rotate(360deg); }\n}"
+    },
+    {
+      "name": "进度条条纹滚动",
+      "category": "loader",
+      "description": "经典条纹进度条动画",
+      "html": "<div class=\"bar\"><div class=\"fill\"></div></div>",
+      "css": ".bar {\n  width: 240px;\n  height: 14px;\n  background: #e3e6ea;\n  border-radius: 999px;\n  overflow: hidden;\n}\n.fill {\n  height: 100%;\n  width: 60%;\n  border-radius: 999px;\n  background: repeating-linear-gradient(\n    45deg, #0e9f6e 0 12px, #12b981 12px 24px);\n  background-size: 34px 100%;\n  animation: slide 1s linear infinite;\n}\n@keyframes slide {\n  to { background-position: 34px 0; }\n}"
+    },
+    {
+      "name": "卡片上浮 + 阴影",
+      "category": "card",
+      "description": "最百搭的悬停上浮效果",
+      "html": "<div class=\"card\">\n  <h4>Card Title</h4>\n  <p>Hover to lift me up.</p>\n</div>",
+      "css": ".card {\n  width: 220px;\n  padding: 20px;\n  background: #fff;\n  border-radius: 14px;\n  border: 1px solid #e3e6ea;\n  font-family: sans-serif;\n  transition: transform .25s, box-shadow .25s;\n}\n.card:hover {\n  transform: translateY(-8px);\n  box-shadow: 0 16px 32px rgba(31, 35, 40, .12);\n}"
+    },
+    {
+      "name": "图片缩放蒙层",
+      "category": "card",
+      "description": "悬停图片放大 + 文字浮现",
+      "html": "<div class=\"card\">\n  <div class=\"img\"></div>\n  <div class=\"overlay\">View Project →</div>\n</div>",
+      "css": ".card {\n  position: relative;\n  width: 240px;\n  height: 140px;\n  border-radius: 12px;\n  overflow: hidden;\n}\n.img {\n  width: 100%;\n  height: 100%;\n  background: linear-gradient(135deg, #667eea, #764ba2);\n  transition: transform .4s;\n}\n.card:hover .img { transform: scale(1.1); }\n.overlay {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background: rgba(31, 35, 40, .55);\n  color: #fff;\n  font-family: sans-serif;\n  opacity: 0;\n  transition: opacity .3s;\n}\n.card:hover .overlay { opacity: 1; }"
+    },
+    {
+      "name": "玻璃拟态卡片",
+      "category": "card",
+      "description": "毛玻璃质感（glassmorphism）",
+      "html": "<div class=\"bg\">\n  <div class=\"glass\">\n    <h4>Glass Card</h4>\n    <p>backdrop-filter blur</p>\n  </div>\n</div>",
+      "css": ".bg {\n  width: 260px;\n  height: 150px;\n  border-radius: 16px;\n  background: linear-gradient(135deg, #f093fb, #f5576c, #4facfe);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.glass {\n  padding: 20px 32px;\n  border-radius: 14px;\n  background: rgba(255, 255, 255, .2);\n  backdrop-filter: blur(12px);\n  -webkit-backdrop-filter: blur(12px);\n  border: 1px solid rgba(255, 255, 255, .35);\n  color: #fff;\n  font-family: sans-serif;\n  text-align: center;\n}"
+    },
+    {
+      "name": "边框追光卡片",
+      "category": "card",
+      "description": "悬停时光沿边框跑一圈",
+      "html": "<div class=\"card\">\n  <h4>Shine Border</h4>\n  <p>Hover me</p>\n</div>",
+      "css": ".card {\n  position: relative;\n  width: 220px;\n  padding: 24px;\n  background: #fff;\n  border-radius: 12px;\n  font-family: sans-serif;\n  overflow: hidden;\n}\n.card::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n  border-radius: 12px;\n  padding: 2px;\n  background: conic-gradient(from var(--a, 0deg), transparent 70%, #2563eb, transparent);\n  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\n  -webkit-mask-composite: xor;\n  mask-composite: exclude;\n  opacity: 0;\n  transition: opacity .3s;\n  animation: rotate 2s linear infinite;\n}\n.card:hover::before { opacity: 1; }\n@property --a {\n  syntax: '<angle>';\n  initial-value: 0deg;\n  inherits: false;\n}\n@keyframes rotate {\n  to { --a: 360deg; }\n}"
+    },
+    {
+      "name": "渐变色文字",
+      "category": "text",
+      "description": "标题文字渐变填充",
+      "html": "<h1 class=\"text\">Gradient Text</h1>",
+      "css": ".text {\n  font-family: sans-serif;\n  font-size: 42px;\n  font-weight: 800;\n  background: linear-gradient(90deg, #2563eb, #7c3aed, #e11d48);\n  -webkit-background-clip: text;\n  background-clip: text;\n  color: transparent;\n}"
+    },
+    {
+      "name": "打字机效果",
+      "category": "text",
+      "description": "纯 CSS 打字 + 光标闪烁",
+      "html": "<h1 class=\"typing\">Hello, World!</h1>",
+      "css": ".typing {\n  font-family: monospace;\n  font-size: 28px;\n  width: 13ch;\n  white-space: nowrap;\n  overflow: hidden;\n  border-right: 3px solid #1f2328;\n  animation:\n    typing 2.2s steps(13) forwards,\n    caret .7s step-end infinite;\n}\n@keyframes typing {\n  from { width: 0; }\n}\n@keyframes caret {\n  50% { border-color: transparent; }\n}"
+    },
+    {
+      "name": "文字描边镂空",
+      "category": "text",
+      "description": "镂空描边大字标题",
+      "html": "<h1 class=\"outline\">OUTLINE</h1>",
+      "css": ".outline {\n  font-family: sans-serif;\n  font-size: 52px;\n  font-weight: 900;\n  letter-spacing: 4px;\n  color: transparent;\n  -webkit-text-stroke: 2px #1f2328;\n  transition: color .3s;\n}\n.outline:hover { color: #1f2328; }"
+    },
+    {
+      "name": "霓虹发光文字",
+      "category": "text",
+      "description": "暗色场景霓虹灯管效果",
+      "html": "<div class=\"dark\">\n  <h1 class=\"neon\">NEON</h1>\n</div>",
+      "css": ".dark {\n  background: #0b0b12;\n  padding: 32px 48px;\n  border-radius: 14px;\n  display: inline-block;\n}\n.neon {\n  font-family: sans-serif;\n  font-size: 44px;\n  color: #fff;\n  letter-spacing: 6px;\n  text-shadow:\n    0 0 6px #0ff,\n    0 0 18px #0ff,\n    0 0 42px #0ff;\n  animation: flicker 2.5s infinite alternate;\n}\n@keyframes flicker {\n  0%, 100% { opacity: 1; }\n  92% { opacity: 1; }\n  93% { opacity: .4; }\n  94% { opacity: 1; }\n}"
+    },
+    {
+      "name": "波浪流动文字",
+      "category": "text",
+      "description": "文字内波浪液体上升",
+      "html": "<h1 class=\"wave\">WAVE</h1>",
+      "css": ".wave {\n  font-family: sans-serif;\n  font-size: 52px;\n  font-weight: 900;\n  background:\n    radial-gradient(circle at 50% 120%, #4facfe 38%, transparent 42%),\n    radial-gradient(circle at 30% 130%, #00c6fb 30%, transparent 46%),\n    #dbeafe;\n  background-size: 200% 200%;\n  -webkit-background-clip: text;\n  background-clip: text;\n  color: transparent;\n  animation: wave 3s ease-in-out infinite alternate;\n}\n@keyframes wave {\n  to { background-position: 100% 40%; }\n}"
+    },
+    {
+      "name": "点阵背景",
+      "category": "background",
+      "description": "高级感圆点网格背景",
+      "html": "<div class=\"dots-bg\"></div>",
+      "css": ".dots-bg {\n  width: 260px;\n  height: 150px;\n  border-radius: 14px;\n  background-color: #fff;\n  background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);\n  background-size: 22px 22px;\n}"
+    },
+    {
+      "name": "网格蓝图背景",
+      "category": "background",
+      "description": "工程师风格网格纸",
+      "html": "<div class=\"grid-bg\"></div>",
+      "css": ".grid-bg {\n  width: 260px;\n  height: 150px;\n  border-radius: 14px;\n  background-color: #f8fafc;\n  background-image:\n    linear-gradient(#e2e8f0 1px, transparent 1px),\n    linear-gradient(90deg, #e2e8f0 1px, transparent 1px);\n  background-size: 24px 24px;\n}"
+    },
+    {
+      "name": "动态渐变背景",
+      "category": "background",
+      "description": "缓慢流动的彩色渐变",
+      "html": "<div class=\"gradient-bg\"></div>",
+      "css": ".gradient-bg {\n  width: 260px;\n  height: 150px;\n  border-radius: 14px;\n  background: linear-gradient(120deg, #a1c4fd, #c2e9fb, #fbc2eb, #a6c1ee);\n  background-size: 300% 300%;\n  animation: move 8s ease infinite;\n}\n@keyframes move {\n  0% { background-position: 0% 50%; }\n  50% { background-position: 100% 50%; }\n  100% { background-position: 0% 50%; }\n}"
+    },
+    {
+      "name": "斜纹警示带",
+      "category": "background",
+      "description": "施工警示条纹样式",
+      "html": "<div class=\"stripes\">UNDER CONSTRUCTION</div>",
+      "css": ".stripes {\n  width: 260px;\n  height: 48px;\n  border-radius: 8px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-family: monospace;\n  font-weight: bold;\n  color: #1f2328;\n  background: repeating-linear-gradient(\n    45deg, #fbbf24 0 16px, #1f2328 16px 32px);\n  background-clip: padding-box;\n  border: 6px solid transparent;\n  background-color: #fde68a;\n}"
+    },
+    {
+      "name": "聚光灯卡片背景",
+      "category": "background",
+      "description": "跟随鼠标的聚光灯（配合少量 JS）",
+      "html": "<div class=\"spotlight\" id=\"spot\">Move your mouse</div>\n<script>\nconst el = document.getElementById('spot');\nel.addEventListener('mousemove', e => {\n  const r = el.getBoundingClientRect();\n  el.style.setProperty('--x', (e.clientX - r.left) + 'px');\n  el.style.setProperty('--y', (e.clientY - r.top) + 'px');\n});\n<\/script>",
+      "css": ".spotlight {\n  width: 260px;\n  height: 150px;\n  border-radius: 14px;\n  background: #111827;\n  color: #9ca3af;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-family: sans-serif;\n  position: relative;\n  overflow: hidden;\n}\n.spotlight::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n  background: radial-gradient(\n    160px circle at var(--x, 50%) var(--y, 50%),\n    rgba(99, 102, 241, .5), transparent 70%);\n}\n.spotlight > * { position: relative; }"
+    }
+  ]
+}
