@@ -54,6 +54,7 @@
 - 📄 [Awesome Resume 简历模板](https://github.com/AnonymousLeeJJ/awesome-resume-zh) — 免费中文简历模板，浏览器直接导出 PDF
 - ⚡ [开发者速查表](https://github.com/AnonymousLeeJJ/cheatsheets-zh) — Git/Docker/Linux/Vim/正则/HTTP/SQL 高频命令随查随用
 - 📘 [Awesome README 中文模板](https://github.com/AnonymousLeeJJ/awesome-readme-zh) — 让人 30 秒决定点 Star 的 README 模板与指南
+- 📚 [书灵.skill](https://github.com/AnonymousLeeJJ/shuling-skill) — 把书、课程或资料蒸馏成可调用的 AI 顾问
 
 ## 📄 许可
 
